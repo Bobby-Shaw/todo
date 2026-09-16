@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="main">
+            <section id="head-row">
+                <button id="new-task-btn" commandfor="new-task-dialog" command="show-modal">New Task</button>
+            </section>
+            <section id="list-section">
+            </section>
+        </div>
+        <dialog id="new-task-dialog">
+            <h1>Create New Task</h1>
+            <form>
+                <label>Task Name</label>
+                <input placeholder="Enter...">
+            </form>
+            <button commandfor="new-task-dialog" command="close">Close</button>
+        </dialog>
+    </body>
+    <script src="index.js"></script>
+</html>
