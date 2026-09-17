@@ -5,24 +5,27 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        
-        <section id="head-row">
-            <button id="new-task-btn">New Task</button>
-        </section>
-        <section id="task-section">
-            <p>Your Tasks:<p>
-            <div id="task-render-section"></div>
-        </section>
+            <main>
+                <section id="head-row">
+                    <button id="new-task-btn">New Task</button>
+                </section>
+                <section id="task-section">
+                    <p>Your Tasks:<p>
+                    <div id="task-render-section"></div>
+                </section>
+            </main>
       
         <dialog id="new-task-dialog">
             <form id="new-task-form">
                 <div class="input-container">
-                    <label aria-autocomplete="off">Task Name</label>
-                    <input class="input" id="task-input" placeholder="Enter...">
+                    <div id="dialog-head-row">
+                        <label>Task Name</label>
+                        <button id="close-btn" class="close-btn" type="button"><img class="close-svg" src="/assets/close.svg"></button>
+                    </div>
+                    <input class="input" id="task-input" placeholder="Enter..." autocomplete="off">
                 </div>
                 <div>
-                    <button type="submit">Submit</button>
-                    <button id="close-btn">Close</button>
+                    <button class="submit" type="submit">Submit</button>
                 </div>
             </form>
         </dialog>

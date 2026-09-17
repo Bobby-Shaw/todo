@@ -22,8 +22,30 @@ button:hover {
     background-color: rgb(62, 62, 62);
 }
 
-#main {
+main {
+    display: block;
+    margin: 0px auto;
+    width: 500px;
     padding: 5px;
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.close-btn:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.close-svg {
+    width: 15px;
+    cursor: pointer;
 }
 
 .input-container {
@@ -49,6 +71,11 @@ button:hover {
     background: rgba(62, 62, 62, 0.53);
 }
 
+#dialog-head-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 #new-task-form {
     display: flex;
     flex-direction: column;
@@ -69,7 +96,35 @@ button:hover {
     padding: 7px 7px
 }
 
+.submit {
+    width: 100%;
+}
+
 #task-list {
     padding-left: 0px;
     list-style: none;
+}
+
+.task {
+    cursor: default;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+
+.complete-btn {
+    padding: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid rgb(48, 138, 255);
+    background-color: rgb(196, 221, 255);
+}
+
+.complete-btn:hover {
+    background-color: rgb(161, 200, 255);
 }
