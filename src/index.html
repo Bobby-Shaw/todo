@@ -5,20 +5,26 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div id="main">
-            <section id="head-row">
-                <button id="new-task-btn" commandfor="new-task-dialog" command="show-modal">New Task</button>
-            </section>
-            <section id="list-section">
-            </section>
-        </div>
+        
+        <section id="head-row">
+            <button id="new-task-btn">New Task</button>
+        </section>
+        <section id="task-section">
+            <p>Your Tasks:<p>
+            <div id="task-render-section"></div>
+        </section>
+      
         <dialog id="new-task-dialog">
-            <h1>Create New Task</h1>
-            <form>
-                <label>Task Name</label>
-                <input placeholder="Enter...">
+            <form id="new-task-form">
+                <div class="input-container">
+                    <label aria-autocomplete="off">Task Name</label>
+                    <input class="input" id="task-input" placeholder="Enter...">
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                    <button id="close-btn">Close</button>
+                </div>
             </form>
-            <button commandfor="new-task-dialog" command="close">Close</button>
         </dialog>
     </body>
     <script src="index.js"></script>
