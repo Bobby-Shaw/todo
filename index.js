@@ -18,8 +18,6 @@ function renderTasks() {
         id ++
     }
     taskSection.replaceChildren(list)
-
-
 }
 
 function createTask(taskObject) {
@@ -32,7 +30,7 @@ function createTask(taskObject) {
     if (taskList.length == 0) {
         taskObject.id = 1
     } else {
-        taskList[taskList.length-1].id = taskObject.id = taskList[taskList.length-1].id + 1
+        taskObject.id = taskList[taskList.length-1].id + 1
     }
     completeButton.setAttribute("class", "complete-btn")
     completeButton.setAttribute("id", taskObject.id)
@@ -40,13 +38,34 @@ function createTask(taskObject) {
 
     taskText.textContent = taskObject.name
     task.append(completeButton, taskText)
+    saveTasks();
 
     completeButton.addEventListener("click", () => {
         taskList.splice(taskObject.id - 1, 1)
         renderTasks()
-    } )
+    })
 
     return task
+}
+
+function saveTasks() {
+    localStorage.setItem("taskList", JSON.stringify(taskList))
+}
+
+function getSavedTasks() {
+    const savedTasks = localStorage.getItem("taskList");
+
+    if (!savedTasks) return;
+
+    try {
+        const parsedTasks = JSON.parse(savedTasks);
+
+        if (Array.isArray(parsedTasks)) {
+            taskList = parsedTasks;
+        }
+    } catch {
+        taskList = [];
+    }
 }
 
 // shows dialog box
@@ -72,4 +91,5 @@ newTaskForm.addEventListener("submit", (event) => {
     newTaskDialog.close();
 })
 
+getSavedTasks()
 renderTasks()
